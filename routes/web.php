@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/bloge',function(Request $Request){
+
+    return [
+        "name" => $Request -> path(),
+        "article"=> "Article 1"
+    ];
 });
