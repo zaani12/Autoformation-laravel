@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('/blog')->name('blog.')->group(function () {
+
+    Route::get('/', function () {
+        return[
+            "Link"=>\route('bloge.show',['slug' =>'article','id' =>13. ]),
+        ];
+    });
+})->name('blog.index');
 
 Route::get('/', function () {
     return [
