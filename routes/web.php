@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::prefix('/blog')->name('blog.')->group(function(){
     Route::get('/',function(Request $request){
-$table = new \App\Models\tables1();
+$table = new \App\Models\tables1;
 $table->test = 'mon test1';
 $table->name ='nom tast name';
 $table->content = 'my  content';
