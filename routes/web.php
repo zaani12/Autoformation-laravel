@@ -12,23 +12,34 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('/blog')->name('blog.')->group(function(){
-    Route::get('/',function(Request $request){
-$table = new \App\Models\tables1;
-$table->test = 'mon test1';
-$table->name ='nom tast name';
-$table->content = 'my  content';
-$table->save();
+// Route::prefix('/blog')->name('blog.')->group(function(){
+//     Route::get('/',function(Request $request){
+// $table = new \App\Models\tables1;
+// $table->test = 'mon test2';
+// $table->name ='nom tast name 2';
+// $table->content = 'my  content 2';
+// $table->save();
 
-return $table;
+// return $table;
 
 
  
         
 
-    })->name('index');
+//     })->name('index');
 
+// });
+
+
+Route::prefix('/blog')->name('blog.')->group(function () {
+    Route::get('/', function (Request $request) {
+        $table = \App\Models\tables1::all(['id' , 'test']);
+        dd($table[0]->test);
+        return $table;
+
+    })->name('index');
 });
+
 Route::get('/{slug}-{id}',function(string $slug, string $id , Request $request){
     return [
         "slug" => $slug,
