@@ -12,25 +12,32 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::prefix('/blog')->name('blog.')->group(function(){
+    Route::get('/',function(Request $request){
+$table = new \App\Models\tables1();
+$table->test = 'mon test1';
+$table->name ='nom tast name';
+$table->content = 'my  content';
+$table->save();
 
-Route::get('/', function () {
+return $table;
+
+
+ 
+        
+
+    })->name('index');
+
+});
+Route::get('/{slug}-{id}',function(string $slug, string $id , Request $request){
     return [
-        "link" => \route('bloge.show',['slug'=>'article','id'=> 13]),
+        "slug" => $slug,
+        "id"=> $id,
+        "name" => $request->input("name"),
+        
     ];
-})->name('blog.index');
-// Route::get('/bloge',function(Request $Request){
-
-//     return [
-//         "name" => $Request -> path(),
-//         "article"=> "Article 1"
-//     ];
-// });
-// use Illuminate\Http\Request;
-
-Route::get('/blog/{id}-{slug}', function (string $slug, string $id ) {
-        return [
-            "slug" => $slug,
-            "id" => $id,
-           "name" => "Tanger",
-    ];
-})->name('blog.show');
+}
+);
+Route::get("/", function () {
+    return ("welcome");
+});
