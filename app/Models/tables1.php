@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class tables1 extends Model
 {
     protected $table = 'tables1';
+    protected $fillable = [
+        'test',
+        'name',
+        'content',
+    ];
 }
