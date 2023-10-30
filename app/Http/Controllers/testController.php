@@ -11,7 +11,10 @@ class testController extends Controller
     public function index() :view{
         // $tables = tables1::paginate(3);
         // return (['tables' => $tables]);
-        return view('test.index');
+        return view('test.index',[
+            $tables = tables1::paginate(1),
+            'tables' => $tables
+        ]);
     }
 //     public function show(string $test , string $id): RedirectResponse | tables1
 //     {
