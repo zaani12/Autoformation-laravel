@@ -11,6 +11,7 @@ class blogController extends Controller
     public function index(){
         $tables = tables1::paginate(1);
         return (['tables' => $tables]);
+        
      
                             }
 }
