@@ -18,6 +18,9 @@
   <p>
     {{$table->content}}
   </p>
+  <p>
+    <a href="{{route('test.show', ['test' => $table -> test,'id'=> $table-> id]) }}">lire la suite</a>
+  </p>
 </article>
 {{$tables->links()}}
 @endforeach
