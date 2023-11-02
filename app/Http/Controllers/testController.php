@@ -16,13 +16,14 @@ class testController extends Controller
             'tables' => $tables
         ]);
     }
-//     public function show(string $test , string $id): RedirectResponse | tables1
-//     {
-//         $table = tables1::find($id);
-//         if($table ->test != $test){
-//             return to_route('blog.show', ['test'=> $table->test, 'is'=> $table ->$id]);
-//         }
-//         return $table;
-//     }
+  
+    public function show(string $test , string $id): RedirectResponse | tables1
+    {
+        $table =tables1::find($id);
+        if($table->test != $test){
+            return to_route('blog.show', ['test'=> $table->test, 'id'=> $table ->id]);
+        }
+        return $table;
+    }
 
 }
