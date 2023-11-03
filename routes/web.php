@@ -35,5 +35,3 @@ Route::get("/", function () {
 //        "name" => "Tanger",
 // ];
 // })->name('blog.show');
-// Route::get('/blog/{id}-{slug}', 'testController@show')->name('blog.show');Route::get('/blog/{id}-{slug}', 'BlogController@show')->name('blog.show');
-Route::get('/blog/{id}-{slug}', 'testController@show')->name('blog.show');

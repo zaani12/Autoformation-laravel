@@ -4,23 +4,30 @@ namespace App\Http\Controllers;
 use App\Models\tables1;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Nette\Utils\Paginator;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\validator;
+use  App\Http\Requests\TestFilterRequest;
 class testController extends Controller
 {
-    public function index() :view{
-       $validator = validator::make([
-            "test"=> "agddr",
-            "content"=> "fdr",
-        ], [
-            "test"=> "required |min:4 ",
-            "content"=> "required |min:4 ",
+    public function index(TestFilterRequest $request) :view{
+    //    $validator = validator::make([
+    //         "test"=> "ffffsd",
+    //         "content"=> "cccccfdr",
+    //     ],
+    //      [
+    //         "test"=> "required |min:4 ",
+    //         "content"=> "required |min:4 ",
 
-        ]);
+    //     ]
+    //     // [
+    //     //     "tset"=> [Rule::unique("tables")->ignore('2')],
+    //     // ]
+    // );
         // dd($validator->fails()); // return true or fals 
         // dd($validator->errors()); // return array of error messages 
-        dd($validator->validated());
+        // dd($validator->validated());
         // $tables = tables1::paginate(3);
         // return (['tables' => $tables]);
         return view('test.index',[
