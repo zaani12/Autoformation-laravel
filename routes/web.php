@@ -20,6 +20,10 @@ Route::prefix('/blog')->name('blog.')->group(function () {
 
     Route::get('/', [testController::class,'index'])->name('index');  // get all the data 
     // Route::get('/{test}-{id}',[testController::class,'show'])->name('index'); // get specific data useing url 'name-id'
+Route::get('/blog/{slug}-{post}','testController@show')->where([
+    'post'=> '[0-9]+',
+    'slug'=> '[a-z0-9\-]+'
+])->name('show');
 
 });
 
@@ -28,10 +32,3 @@ Route::get("/", function () {
     return ("welcome");
 });
 
-// Route::get('/blog/{id}-{slug} , testController@show', function (string $slug, string $id ) {
-//     return [
-//         "slug" => $slug,
-//         "id" => $id,
-//        "name" => "Tanger",
-// ];
-// })->name('blog.show');

@@ -10,19 +10,16 @@
 
 
     @foreach($tables as $table)
-<article>
-  <h3>{{$table->test}}</h3>
-  <p>
-    {{$table->name}}
-  </p>
-  <p>
-    {{$table->content}}
-  </p>
-  <p>
-  </p>
-</article>
-{{$tables->links()}}
+    <article>
+        <h3>{{$table->test}}</h3>
+        <p>{{$table->name}}</p>
+        <p>{{$table->content}}</p>
+        
+        <a href="{{ route('blog.show', ['test' => $table->test, 'post' => $table->id]) }}" class="btn btn-primary">View More Details</a>
+    </article>
 @endforeach
+{{$tables->links()}}
+
 
 @endsection
 

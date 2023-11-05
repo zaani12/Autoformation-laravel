@@ -38,13 +38,21 @@ class testController extends Controller
 
     }
   
-    public function show(string $test , string $id): RedirectResponse | tables1
+    public function show(string $test , string $post): RedirectResponse | tables1
     {
-        $table =tables1::find($id);
+        $table =tables1::find($post);
         if($table->test != $test){
-            return to_route('blog.show', ['test'=> $table->test, 'id'=> $table ->id]);
+            return to_route('blog.show', ['test'=> $table->test, 'post'=> $table ->id]);
         }
         return $table;
     }
+    // public function show($slug) {
+    //     // Retrieve the item using the $slug parameter
+    //     $item = tables1::where('slug', $slug)->first();
+    
+    //     // Pass the item to a view and display the more details page
+    //     return view('blog.show', ['item' => $item]);
+    // }
+    
 
 }
