@@ -25,14 +25,14 @@ class TestFilterRequest extends FormRequest
     public function rules()
     {
         return [
-            "test"=> ['required','min:4'],
-            "slug"=> ["required","regex:/^[a-z0-9\-]+$/"],
+            // "test"=> ['required','min:4'],
+            // "slug"=> ["required","regex:/^[a-z0-9\-]+$/"],
         ];
     }
     public function prepareForValidation(){
         $this->merge([
             // 'slug'=> 'aze-aze',
-            'slug'=> $this->input('slug') ?: Str::slug($this->input('test'))
+            // 'slug'=> $this->input('slug') ?: Str::slug($this->input('test'))
         ]);
     }
 }
