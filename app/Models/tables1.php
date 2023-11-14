@@ -13,4 +13,5 @@ class tables1 extends Model
         'name',
         'content',
     ];
+    
 }
