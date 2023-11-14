@@ -37,3 +37,6 @@ Route::get("/", function () {
 // })->name('blog.show');
 // Route::get('/blog/{id}-{slug}', 'testController@show')->name('blog.show');Route::get('/blog/{id}-{slug}', 'BlogController@show')->name('blog.show');
 Route::get('/blog/{id}-{slug}', 'testController@show')->name('blog.show');
+use App\Http\Controllers\Tables1Controller;
+
+Route::get('/create-records', [Tables1Controller::class, 'createRecords']);
