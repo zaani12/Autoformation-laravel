@@ -9,6 +9,9 @@ use Illuminate\View\View;
 
 class testController extends Controller
 {
+    public function create(){
+        return view('test.create');
+    }
     public function index() :view{
         // $tables = tables1::paginate(3);
         // return (['tables' => $tables]);

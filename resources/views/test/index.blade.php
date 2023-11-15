@@ -19,7 +19,6 @@
     {{$table->content}}
   </p>
   <p>
-    <a href="{{route('blog.show', ['test' => $table -> test,'id'=> $table-> id]) }}">lire la suite</a>
   </p>
 </article>
 {{$tables->links()}}
