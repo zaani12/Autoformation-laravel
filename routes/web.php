@@ -15,7 +15,12 @@ use App\Http\Controllers\Tables1Controller;
 */
 
 
+// Route::prefix('/blog')->name('blog.')->group(function () {
 
+//     Route::get('/', [testController::class,'index'])->name('index');  // get all the data 
+//     // Route::get('/{test}-{id}',[testController::class,'show'])->name('index'); // get specific data useing url 'name-id'
+
+// });
 Route::prefix('/blog')->name('blog.')->group(function () {
     Route::get('/', [TestController::class, 'index'])->name('index'); // get all the data
     Route::get('create/{test}-{id}', [TestController::class, 'show'])->name('showTest'); // get specific data using URL 'test-id'
