@@ -23,9 +23,7 @@ Route::prefix('/blog')->name('blog.')->group(function () {
     Route::post('/new', [TestController::class, 'store']);
 });
 
-Route::get("/", function () {
-    return ("welcome");
-});
+
 
 // Route::get('/blog/{id}-{slug} , testController@show', function (string $slug, string $id ) {
 //     return [
