@@ -9,14 +9,14 @@ class Tables1Controller extends Controller
     public function createRecords()
     {
         // Create a new record
-        $tables1Record = tables1::create([
+        $tables1Record = posts::create([
             'test' => 'test2',
             'name' => 'test name',
             'content' => 'Lorem ipsum dolor sit amet.',
         ]);
 
         // You can create additional records as needed
-        $tables1Record2 = tables1::create([
+        $postsRecord2 = posts::create([
             'test' => 'test3',
             'name' => 'test name',
             'content' => 'Consectetur adipiscing elit.',
@@ -24,11 +24,11 @@ class Tables1Controller extends Controller
 
         // ... add more records as necessary
 
-        // To retrieve all records from the 'tables1' table
-        $allRecords = tables1::all();
+        // To retrieve all records from the 'posts' table
+        $allRecords = posts::all();
 
         // To retrieve a specific record by ID
-        $specificRecord = tables1::find(1); // Replace 1 with the actual ID
+        $specificRecord = posts::find(1); // Replace 1 with the actual ID
 
         // To update a record
         $specificRecord->update([
