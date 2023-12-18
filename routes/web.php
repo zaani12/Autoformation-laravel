@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/blog')->name('blog.')->group(function () {
     Route::get('/', function (Request $request) {
         $table = \App\Models\tables1::all(['id' , 'test']);
-        dd($table[0]->test);
+        dd($table);
         return $table;
 
     })->name('index');
