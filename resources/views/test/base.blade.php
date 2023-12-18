@@ -22,11 +22,7 @@
   </li>
 </ul>
 <div class="container">
-@if($session('success'))
-        <div class="alert alert-success">
-            {{ ($session('success')) }}
-        </div>
-    @endif
+
     @yield('content')
 </div>
 </body>
