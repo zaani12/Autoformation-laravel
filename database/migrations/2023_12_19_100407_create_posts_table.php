@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-
-        Schema::create('tables1', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('test');
             $table->string('name')->unique();
             $table->longText('content');
             $table->timestamps();
-    });
+        });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tables1');
+        Schema::dropIfExists('posts');
     }
 };
