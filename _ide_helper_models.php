@@ -38,30 +38,20 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
-	class User extends \Eloquent {}
+	class IdeHelperUser {}
 }
 
 namespace App\Models{
 /**
  * App\Models\tables1
  *
- * @property int $id
- * @property string $test
- * @property string $name
- * @property string $content
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|tables1 newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|tables1 newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|tables1 query()
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereContent($value)
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereTest($value)
- * @method static \Illuminate\Database\Eloquent\Builder|tables1 whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
-	class tables1 extends \Eloquent {}
+	class IdeHelpertables1 {}
 }
 

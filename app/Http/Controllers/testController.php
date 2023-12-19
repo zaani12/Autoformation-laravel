@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\tables1;
+use App\Models\post;
 use Illuminate\Http\Request;
 use Nette\Utils\Paginator;
 use Illuminate\View\View;
@@ -17,7 +17,7 @@ class testController extends Controller
     {
         // dd($request);
     
-        $table = tables1::create([
+        $table = post::create([
             'test' => $request->input('test'),
             'name' => $request->input('name'),
             'content' => $request->input('content'),
@@ -27,15 +27,15 @@ class testController extends Controller
         return view("test.showTest",compact('table'))->with('success,',"l'article a été bien sauvgarder");
     }
     public function index() :view{
-        $tables = tables1::paginate(1);
+        $tables = post::paginate(1);
         return view("test.index",compact('tables'));
 
     }
   
-    public function show(string $test , string $id):tables1
+    public function show(string $test , string $id):post
     {
     
-        $table =tables1::find($id);
+        $table =post::find($id);
 
         return view('showTest', ['post' => $table]);
     }
